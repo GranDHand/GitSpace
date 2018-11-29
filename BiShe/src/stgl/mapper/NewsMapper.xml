@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="stgl.mapper.NewsMapper">
+  	<select id="findAllNewMapper" resultType="Stgl_News">
+  		select * from STGL_NEWS
+ 	</select>
+ 	<select id="findTypeNewMapper" resultType="Stgl_News">
+  		select * from STGL_NEWS where N_State = #{n_status}
+ 	</select>
+  </mapper>

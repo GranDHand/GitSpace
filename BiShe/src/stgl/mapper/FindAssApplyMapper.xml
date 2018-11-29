@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="stgl.mapper.FindAssApplyMapper">
+  
+  	<select id="findAssApply"  resultType="Stgl_ApplyActvitity">
+  		select * from STGL_APPLYACTIVITY
+ 	</select>
+ 	
+ 	<delete id="delAssApply">
+ 	 delete from STGL_APPLYACTIVITY where Act_Ass_id=#{ass_id}
+ 	</delete>
+ 	
+ 	<insert id="insertAssAct">
+ 	insert into  STGL_ASS_ACTIVITY(ASS_ACT_name,ASS_ACT_time,ASS_ACT_address,ASS_ACT_ASS_id) value(#{ass_act_name},#{ass_act_time},#{ass_act_address},#{ass_act_ass_id})
+ 	</insert>
+  </mapper>

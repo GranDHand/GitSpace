@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="stgl.mapper.UpdatePdMapper">
+  	<update id = "updatePd"> 
+  		update STGL_STU set  stu_password=#{stu_password} where stu_username=#{stu_username}
+  	</update>
+  	
+  	<select id="selectUsername" resultType="Stgl_Stu">
+  	  	select STU_PassWord from STGL_STU where stu_username=#{stu_username}
+  	</select>
+  </mapper>

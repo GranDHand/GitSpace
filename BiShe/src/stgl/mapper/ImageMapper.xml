@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="stgl.mapper.ImageMapper">
+  
+  	<insert id = "uplode">
+		INSERT INTO  STGL_APPLYACTIVITY(IMG_name, IMG_route, IMG_Stu_name, Img_ass_id) VALUES(#{img_name},#{img_route},#{img_stu_name},#{img_ass_id});
+  	</insert>
+  	<select id="uplodeAssId" resultType="Stgl_Stu">
+  		select STU_Name,STU_Assocition_id from STGL_STU where stu_username=#{stu_username}
+  	</select>
+  </mapper>

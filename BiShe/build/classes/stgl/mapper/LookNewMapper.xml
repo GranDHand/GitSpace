@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="stgl.mapper.LookNewMapper">
+ 	<select id="selLookNews"  resultType="Stgl_News">
+  		SELECT N_P_Time,N_Content,N_Title from STGL_NEWS  where N_Id=#{n_id}
+ 	</select>
+  </mapper>

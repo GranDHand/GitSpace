@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="stgl.mapper.ApplyActivityMapper">
+  
+  	<insert id = "insertApply">
+		INSERT INTO  STGL_APPLYACTIVITY(Act_Ass_id, Act_stusname, Act_tel, Act_name, Act_time, Act_address, Act_content) VALUES(#{act_ass_id},#{act_stusname},#{act_tel},#{act_name},#{act_time},#{act_address},#{act_content});
+  	</insert>
+  </mapper>

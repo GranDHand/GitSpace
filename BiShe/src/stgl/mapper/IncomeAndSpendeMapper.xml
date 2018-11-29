@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="stgl.mapper.IncomeAndSpendeMapper">
+  	<select id="incomeAndSpend" resultType="Stgl_Invcice">
+  		select * from STGL_INVCICE where INV_status =#{inv_status}
+ 	</select>
+ 	<select id="pagingAllAss"  resultType="Stgl_Invcice">
+  		SELECT * FROM STGL_INVCICE where INV_status = #{inv_status} LIMIT #{pageNum},#{pageSize}
+ 	</select>
+  </mapper>

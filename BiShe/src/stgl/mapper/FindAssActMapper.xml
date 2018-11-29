@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="stgl.mapper.FindAssActMapper">
+  
+  <select id="findAllAct" resultType="Stgl_Ass_Activity">
+  		select * from STGL_ASS_ACTIVITY where ASS_ACT_ASS_id=#{ass_id}
+ 	</select>
+ 	 	
+  	<select id="assActivity" resultType="Stgl_Ass_Activity">
+  		select * from STGL_ASS_ACTIVITY where ASS_ACT_ASS_id=#{ass_id} LIMIT #{pageNum},#{pageSize}
+ 	</select>
+  </mapper>

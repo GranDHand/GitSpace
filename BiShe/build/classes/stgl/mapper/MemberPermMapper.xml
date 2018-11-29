@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="stgl.mapper.MemberPermMapper">
+  	<update id = "updatePerm"> 
+  		update STGL_STU set STU_type=#{stu_type} where STU_Username=#{stu_username} AND STU_Assocition_id = (select ass_id from STGL_ASSOCIATION where ASS_Name=#{ass_name})
+  	</update>
+  </mapper>

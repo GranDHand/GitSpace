@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="stgl.mapper.StuApplyMapper">
+  
+  	<insert id = "stuApply">
+		INSERT INTO  STGL_APPLY(APP_STU_Username, APP_ASS_Id) VALUES(#{app_stu_username},#{app_ass_id});
+  	</insert>
+  	
+  	<select id="getStu" resultType="Stgl_Stu">
+  		SELECT stu.STU_Id,stu.STU_Name,stu.STU_Username,stu.STU_Class,apply.APP_Id,apply.APP_ASS_Id,apply.APP_STU_Username FROM STGL_STU stu,STGL_APPLY apply WHERE stu.stu_username= apply.APP_STU_Username AND apply.APP_ASS_Id=${stu_assocition_id}
+  	</select>
+  	
+  	<!-- 根据管理员的stu_username拿到他的社团ID -->
+  	<select id="getAssId" resultType="Stgl_Stu">
+  		SELECT STU_Assocition_id FROM STGL_STU stu WHERE stu.stu_username= #{stu_username}
+  	</select>
+  	
+  	<delete id="delStuApply">
+  		delete from STGL_APPLY where APP_STU_Username = #{stu_username}
+  	</delete>
+  	
+  	<update id="upStuInf">
+  		update STGL_STU set STU_state=#{stu_state},STU_Assocition_id=#{stu_assocition_id} where STU_Username=#{stu_username}
+  	</update>
+  	
+  </mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="stgl.mapper.WirteNewsMapper">
+  	
+  	<select id="selAssId"  resultType="string">
+  		select STU_Assocition_id from STGL_STU where STU_Username=#{stu_username}
+  	</select>
+  	
+  	<insert id = "insertNews">
+		INSERT INTO STGL_NEWS(N_State,N_P_Time,N_Content,N_Title,N_Ass_id) VALUES(#{n_state},#{n_p_time},#{n_content},#{n_title},#{n_ass_id})
+  	</insert>
+  </mapper>
+  

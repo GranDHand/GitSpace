@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="stgl.mapper.FindNewsByIdMapper">
+  	<select id="findNewsByIdMapper" resultType="Stgl_News">
+  		select * from STGL_STU where n_id=#{n_id}
+ 	</select>
+  </mapper>

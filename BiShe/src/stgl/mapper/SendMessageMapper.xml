@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="stgl.mapper.SendMessageMapper">
+  	<select id="sendMessage" resultType="Stgl_Stu">
+  		SELECT STU_Name,STU_Assocition_id FROM STGL_STU  where STU_Username = #{stu_username}
+  	</select>
+  	
+  
+  	<insert id = "insertMessage">
+		INSERT INTO  STGL_MESSAGE(m_content,m_stu_name,m_ass_id) VALUES(#{m_content},#{m_stu_name},#{m_ass_id});
+  	</insert>
+  	
+  	<select id="selMessage" resultType="Stgl_message">
+  		<!-- SELECT m_content,m_stu_name FROM STGL_message WHERE m_ass_id=#{m_ass_id} LIMIT 15 -->
+		SELECT t.m_content,t.m_stu_name FROM ( SELECT * FROM STGL_message WHERE m_ass_id=#{m_ass_id}  ORDER BY m_id DESC  LIMIT 15) t ORDER BY m_id asc
+  	</select>
+
+  </mapper>

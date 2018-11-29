@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="stgl.mapper.FindAllStuMapper">
+  	<select id = "findAllStu" resultType="Stgl_Stu"> 
+		SELECT STU_Name,STU_Class,STU_Major,STU_Grade FROM STGL_STU WHERE STU_Assocition_id=(SELECT STU_Assocition_id FROM STGL_STU WHERE stu_username=#{stu_username})
+  	</select>
+  	
+  	<select id = "pagingAllMember" resultType="Stgl_Stu"> 
+		SELECT STU_Name,STU_Class,STU_Major,STU_Grade FROM STGL_STU WHERE STU_Assocition_id=(SELECT STU_Assocition_id FROM STGL_STU WHERE stu_username=#{stu_username}) LIMIT #{pageNum},#{pageSize}
+  	</select>
+  </mapper>
